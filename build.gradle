@@ -2,54 +2,62 @@ group 'net.treelzebub'
 version '0.01'
 
 buildscript {
-    ext.kotlin_version = '1.1.3-2'
+  ext.kotlin_version = '1.1.3-2'
 
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
+}
+
+
+allprojects {
+  apply plugin: "kotlin"
 }
 
 subprojects {
-    apply plugin: 'kotlin'
-    ext {
-        deps = [
-                commons_cli  : 'commons-cli:commons-cli:1.4',
-                commons_io   : 'commons-io:commons-io:2.4',
-                commons_lang : 'org.apache.commons:commons-lang3:3.1',
-                smali        : 'org.smali:smali:2.2.1',
-                baksmali     : 'org.smali:baksmali:2.2.1',
-                snakeyaml    : 'org.yaml:snakeyaml:1.18:android',
+  apply plugin: "kotlin"
+  ext {
+    deps = [
+        commons_cli : 'commons-cli:commons-cli:1.4',
+        commons_io  : 'commons-io:commons-io:2.4',
+        commons_lang: 'org.apache.commons:commons-lang3:3.1',
+        smali       : 'org.smali:smali:2.2.1',
+        baksmali    : 'org.smali:baksmali:2.2.1',
+        snakeyaml   : 'org.yaml:snakeyaml:1.18:android',
 //          guava: 'com.google.guava:guava:14.0',
 //          proguard_gradle: 'net.sf.proguard:proguard-gradle:5.2.1',
 //          xmlpull: 'xpp3:xpp3:1.1.4c',
 //          xmlunit: 'xmlunit:xmlunit:1.3',
 
-        ]
+    ]
 
-        testDeps = [
-            junit : 'junit:junit:4.12'
-        ]
-    }
+    testDeps = [
+        junit: 'junit:junit:4.12'
+    ]
+  }
 
-    repositories {
-        jcenter()
-    }
 
-    test {
-        testLogging {
-            exceptionFormat = 'full'
-        }
-    }
-    compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
-    }
+  repositories {
+    jcenter()
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin/'
+    test.java.srcDirs += 'src/test/kotlin/'
+  }
+
+  compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+  }
+  compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+  }
 }
+
+
 
 //repositories {
 //    mavenCentral()

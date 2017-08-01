@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_main.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_test.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kanalyzer.iml" filepath="$PROJECT_DIR$/.idea/modules/kanalyzer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kanalyzer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kanalyzer_main.iml" group="kanalyzer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kanalyzer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kanalyzer_test.iml" group="kanalyzer" />
     </modules>
   </component>
 </project>

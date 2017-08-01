@@ -1,37 +1,45 @@
+apply plugin: 'kotlin'
+
 group 'net.treelzebub'
 version '0.01'
 
 buildscript {
-    ext.kotlin_version = '1.1.3-2'
+  ext.kotlin_version = '1.1.3-2'
 
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  }
 }
 
-apply plugin: 'kotlin'
-
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    deps.each { dep ->
-        compile "${dep.value}"
-    }
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+  deps.each { dep ->
+    compile "${dep.value}"
+  }
 
-    testDeps.each { dep ->
-        testCompile "${dep.value}"
-    }
+  testDeps.each { dep ->
+    testCompile "${dep.value}"
+  }
 }
 
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "1.8"
+  jar {
+    manifest {
+      attributes 'Main-Class': 'net.treelzebub.kanalyzer.MainKt'
+    }
+//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+  }
+
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "1.8"
 }
+
