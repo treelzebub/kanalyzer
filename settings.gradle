@@ -1,0 +1,3 @@
+rootProject.name = 'kanalyzer'
+include 'core'
+

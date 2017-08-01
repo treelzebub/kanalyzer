@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.smali:smali:2.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.smali/smali/2.2.1/55820218d0ad689da75b0eab52b7ba984a09130/smali-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.smali/smali/2.2.1/7174e370d895a1fbc1532aac337152c80afb1ac9/smali-2.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
